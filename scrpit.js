@@ -53,7 +53,7 @@ container.addEventListener("touchstart", (e) =>{
 
     function rotate(e){
 
-        calc = (touchLocation.pageX - x) / sensibility;
+        calc = (e.targetTouches[0].pageX - x) / sensibility;
     
         card.style.transform = `rotateY(${calc + prev}deg)`;
     
