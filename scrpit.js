@@ -10,6 +10,9 @@ container.addEventListener("mousedown", (e) =>{
 
     const x = e.clientX;
 
+    // card.style.animation = 'none';
+
+
     container.addEventListener("mousemove", rotate);
 
     function rotate(e){
@@ -29,6 +32,43 @@ container.addEventListener("mousedown", (e) =>{
         container.removeEventListener("mousemove", rotate);
 
         body.style.cursor = `default`;
+        // card.style.animation = 'spin 5s infinite linear';
+
     });
 });
 
+// MOBILE FUNCTIONS
+
+container.addEventListener("touchstart", (e) =>{
+
+    const touchLocation = e.targetTouches[0];
+
+
+    const x = touchLocation.pageX;
+
+    // card.style.animation = 'none';
+
+
+    container.addEventListener("touchmove", rotate);
+
+    function rotate(e){
+
+        calc = (touchLocation.pageX - x) / sensibility;
+    
+        card.style.transform = `rotateY(${calc + prev}deg)`;
+    
+        body.style.cursor = `grabbing`;
+    
+    }
+
+    prev += calc;
+    
+    window.addEventListener("touchend", () => {
+
+        container.removeEventListener("touchmove", rotate);
+
+        body.style.cursor = `default`;
+        // card.style.animation = 'spin 5s infinite linear';
+
+    });
+});
