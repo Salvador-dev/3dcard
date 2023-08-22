@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: black;
 }
 
 
@@ -17,6 +17,12 @@ body {
     perspective: 50em;
     /* box-shadow: 0px 5px 5px 0px #222; */
     backdrop-filter: opacity(20%);
+    font-size: 15px;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -25,10 +31,11 @@ body {
     width: 18.75em;
     position: relative;
     font-family: sans-serif;
-    animation: spin 5s infinite linear;
+    /* animation: spin 5s infinite linear; */
     transform-style: preserve-3d;
+    cursor: pointer;
+    user-select: none;
 
-    
 }
 
 @keyframes spin {
@@ -49,6 +56,7 @@ body {
     backface-visibility: hidden;
     border-radius: 0.5em;
     overflow: hidden;
+    pointer-events: none;
 
 }
 
