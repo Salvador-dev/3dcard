@@ -5,9 +5,17 @@
 }
 
 body {
-    background-color: black;
+    background: url('fondo.png');
 }
 
+div.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #00000093;
+}
 
 .container {
     position: absolute;
@@ -27,7 +35,7 @@ body {
 }
 
 .card {
-    height: 27em;
+    height: 27.5em;
     width: 18.75em;
     position: relative;
     font-family: sans-serif;
